@@ -1,0 +1,22 @@
+//Part3: Node Internals
+1. What is the Node.js Event Loop?
+The Event Loop allows Node.js to run asynchronous code,it keeps checking if the call stack is empty, then takes completed tasks and executes them.
+
+2. What is Libuv and What Role Does It Play in Node.js?
+Libuv is a C++ library used by Node.js,It handles asynchronous operations like file system tasks, networking, and manages the event loop and thread pool.
+
+3. How Does Node.js Handle Asynchronous Operations Under the Hood?
+When Node.js runs an async task,heavy tasks go to the thread pool,network tasks are handled by the OS,once finished, their callbacks are sent to the event queue to be executed later.
+
+4. What is the Difference Between the Call Stack, Event Queue, and Event Loop?
+Call Stack: Executes the current code
+Event Queue: Stores completed async callbacks
+Event Loop: Moves callbacks from the queue to the stack when it is empty
+
+5. What is the Node.js Thread Pool and How to Set the Thread Pool Size?
+The thread pool is used to run heavy background tasks,by default, it has 4 threads
+
+6. How Does Node.js Handle Blocking and Non-Blocking Code Execution?
+Blocking code stops the program until it finishes
+Non-blocking code runs in the background and allows the program to continue
+*Node.js is designed to use non-blocking code to stay fast and efficient*
